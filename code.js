@@ -4,7 +4,6 @@ const lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi di
 // Add a list of colors to this array
 const colors = ["blue", "green","yellow","violet","red","indigo","cyan","brown","orange"]
 
-
 // Use this object for your random name generator. Enter in a bunch of objects with first and last names. When generating a new random name, try to grab a random first or last name from any object. Don't just take object as a whole.
 
 const names = [{
@@ -39,20 +38,17 @@ const names = [{
 
 
 function getRndInteger(min, max) {
-   min = Number(min)
+    min = Number(min)
     max = Number(max)
     return Math.floor((Math.random() * (max - min)) + min);
-  }
+}
 
   
-  
-  function randomOnetoHun(){
+function randomOnetoHun(){
       let newRandomNum = getRndInteger(1, 100)
       document.getElementById("p1").innerHTML ="the random number is  " + newRandomNum   
 
 }
-
-
 
 
 function ranStartEnd(){
@@ -60,22 +56,17 @@ function ranStartEnd(){
 let  end = document.getElementById("in2").value
 
     document.getElementById("p2").innerHTML="the random number is " +  getRndInteger(start,end)
-
-
 }
 
+
 function loremStr(){
-
     document.getElementById("p3").innerHTML=lorem
-
-
 }
 
 
 function loremSentences() {
     let numberOfSentence = document.getElementById("loremSentence").value
 
-   
     let newLoremSentence = lorem.split(".")
     
 
@@ -87,6 +78,7 @@ function loremSentences() {
     document.getElementById("p4").innerHTML = newLorem
 
 }
+
 
 function loremChars() {
     let numberOfChars = document.getElementById("loremChar").value
@@ -105,28 +97,23 @@ function loremChars() {
 }
 
 
-
 function btn6Pressed(){
     var arr = Date().split(" ")
-
     console.log("button1 was pressed")
     document.getElementById("rand6").innerHTML="cureent date is " +   arr[2] + " " + arr[1] + " " + arr[3]
 }
     
 
 function btn7Pressed(){
-
     var arr1 = Date().split(" ")
     console.log("button1 was pressed")
-    document.getElementById("rand7").innerHTML="cureent time is " + arr1[4]
-   
+    document.getElementById("rand7").innerHTML="cureent time is " + arr1[4] 
 }
 
 
 function convertInchesToFeet() {
     let inches = document.getElementById("inches").value
     let convertoFeet = inches / 12 + " Feet"
-
     document.getElementById("p8").innerHTML = convertoFeet
 }
 
@@ -134,9 +121,9 @@ function convertInchesToFeet() {
 function convertFeetToInches() {
     let feet = document.getElementById("feet").value
     let convertoInches = feet * 12 + "  Inches"
-
     document.getElementById("p9").innerHTML = convertoInches
 }
+
 
 function compareWords() {
     let word1 = document.getElementById("firstWord").value
@@ -150,13 +137,11 @@ function compareWords() {
         msg = "size of the two string values is different---- word1 has " + word1.length + " word2 has " + word2.length
     }
     document.getElementById("p10").innerHTML = msg
-
 }
 
 
 function randomPassword() {
     let chars = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "!", "@", "#"]
-
     let newPassword = ""
         // password length 10
     for (let i = 0; i <= 10; i++) {
@@ -172,30 +157,26 @@ function evenNum() {
     let msg = ""
     if (num % 2 == 0) {
         msg = num + " is even"
-
     } else {
         msg = num + " is odd"
     }
-
     document.getElementById("p12").innerHTML = msg
 
 }
 
-function ranColour() {
 
+function ranColour() {
     let num =getRndInteger(0, colors.length - 1)
     let newColour = colors[num]
-
     document.getElementById("p13").innerHTML = newColour
 }
+
 
 function ranNames() {
     let num1 =getRndInteger(0, colors.length - 1)
     let num2 =getRndInteger(0, colors.length - 1)
-
     let firstName = names[num1].firstName
     let lastName = names[num2].lastName
     let userName = firstName + " " + lastName
-
     document.getElementById("p14").innerHTML = userName
 }
